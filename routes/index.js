@@ -1,10 +1,14 @@
-const express = require('express')
+const express = require('express');
 
-const routes = express.Router();
-const homeController=require('../controllers/home_controller')
+const router = express.Router();
+const homeController=require('../controllers/home_controller');
 
-console.log('roter loaded')
+console.log('roter loaded');
 
-routes.get('/',homeController.home)
+router.get('/',homeController.home);
+router.use('/users',require('./users'));
 
-module.exports=routes;
+//for adding more routes access from here
+//router.use('/routerName', require('./routerFile'));
+
+module.exports=router;
