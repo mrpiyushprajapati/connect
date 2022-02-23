@@ -1,9 +1,25 @@
 <link rel="stylesheet" href="/css/home.css">
-<h1> connect / <%= title %> </h1>
+<h1><%= title %> | Home</h1>
 <section>
     <h4>Post</h4>
-    <form action="" id="new-post-form" method="post">
+    <form action="/posts/create" id="new-post-form" method="post">
         <textarea name="content" cols="30" rows="5" placeholder="Type here..."></textarea>
         <input type="submit" value="post">
     </form>
+
+    <div id="posts-list-container">
+        <ul>
+            <% for(post of posts){ %>
+            
+                <li>
+                    
+                    <p>
+                        <%= post.content %>
+                        <br/>
+                    </p>
+                </li>
+                <small><%= post.user.name %></small>                                
+            <% } %>
+        </ul>
+    </div>
 </section>

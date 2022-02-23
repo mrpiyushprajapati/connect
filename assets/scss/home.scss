@@ -1,3 +1,18 @@
 body{
     background-color: whitesmoke;
 }
+
+#posts-list-container{
+    display: flex;
+    justify-content: center;
+    ul{
+
+        li{
+            list-style-type: disc;
+            text-align: center;
+            width: 300px;
+            font-size: 20px;
+        }
+        
+    }
+}
