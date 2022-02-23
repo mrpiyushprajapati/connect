@@ -1,0 +1,35 @@
+header{
+    background-color:midnightblue;
+    text-align: left;
+
+    #heading {
+        color: whitesmoke;
+        padding: 20px 40px;
+        font-size: 40px;
+        width: 60%;
+        display: inline-block;
+    }
+
+    ul{
+        display: inline-block;
+        width: 10%;
+        margin: 10px 0px;
+        margin-left: 300px;
+
+        li{
+            list-style-type: none;
+
+            a{
+                text-decoration: none;
+                color: aliceblue;
+                width: 10px;
+                font-size: 20px;
+            }
+        }
+
+        a:hover{
+            color: cadetblue; 
+            font-size: 21px;
+         }
+    }
+}

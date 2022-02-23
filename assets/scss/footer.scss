@@ -1,0 +1,36 @@
+footer{
+    background-color:midnightblue;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: whitesmoke;
+    #header{
+        margin: 10px;
+    }
+    h2{
+        margin: 10px 0px;
+        display: inline;
+        font-family: 'Sacramento', cursive;
+    }
+    h3{
+        display: inline;
+        font-size: 25px;
+    }
+    ul{
+        
+        li{
+            display: inline-block;
+            font-size: 25px;
+            margin-right: 20px;
+            margin-bottom: 10px;
+
+            a{
+                color: whitesmoke;
+                a:hover{
+                    color: black;
+                }
+
+            }
+        }
+    }
+}
