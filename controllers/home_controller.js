@@ -1,6 +1,6 @@
 const Post = require('../models/post');
 
-module.exports.home=function(req, res){
+module.exports.home = function(req, res){
     // return res.end('<h1>express is up for connect</h1>');
 
     // console.log(req.cookies);
@@ -18,7 +18,7 @@ module.exports.home=function(req, res){
             title: 'lets CONNECT',
             posts: posts
         });
-    })
+    });
 }
 
 //module.exports.actionName=function(req, res){}

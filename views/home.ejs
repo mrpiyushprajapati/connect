@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/css/home.css">
 <h1><%= title %> | Home</h1>
-<section>
+<section id="feed-posts">
     <h4>Post</h4>
     <% if(locals.user){ %>
     <form action="/posts/create" id="new-post-form" method="post">
@@ -11,16 +11,17 @@
 
     <div id="posts-list-container">
         <ul>
+
             <% for(post of posts){ %>
             
                 <li>
-                    
                     <p>
                         <%= post.content %>
                         <br/>
+                        <small><%= post.user.name %></small>     
                     </p>
                 </li>
-                <small><%= post.user.name %></small>                                
+                
             <% } %>
         </ul>
     </div>
