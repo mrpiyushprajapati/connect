@@ -16,7 +16,7 @@ const commentSchema = new moongose.Schema({
     }
 }, {
     timestamps: true
-})
+});
 
 const Comment = moongose.model('Comment', commentSchema);
 
