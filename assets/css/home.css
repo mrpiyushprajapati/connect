@@ -1,11 +1,10 @@
-body {
-  background-color: whitesmoke; }
-
-#posts-list-container {
+#home-container {
   display: flex;
-  justify-content: center; }
-  #posts-list-container ul li {
-    list-style-type: disc;
-    text-align: center;
-    width: 300px;
-    font-size: 20px; }
+  height: 100%; }
+  #home-container #feed-posts {
+    width: 70%;
+    padding: 10px; }
+  #home-container #user-friends {
+    width: 30%;
+    padding: 10px;
+    border-left: 1px solid lightgrey; }

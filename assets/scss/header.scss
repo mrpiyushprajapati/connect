@@ -1,35 +1,71 @@
-header{
-    background-color:midnightblue;
-    text-align: left;
+#layout-header{
+    nav{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+        background: midnightblue;
+        color: white;
+        box-shadow: 1px 1px 1px 1px lightgrey;
 
-    #heading {
-        color: whitesmoke;
-        padding: 20px 40px;
-        font-size: 40px;
-        width: 60%;
-        display: inline-block;
-    }
-
-    ul{
-        display: inline-block;
-        width: 10%;
-        margin: 10px 0px;
-        margin-left: 300px;
-
-        li{
-            list-style-type: none;
-
-            a{
-                text-decoration: none;
-                color: aliceblue;
-                width: 10px;
-                font-size: 20px;
+        .mini-logo{
+            p{
+                margin: 5px;
+                font-size: 1.4rem;
+                font-weight: bold;
             }
         }
 
-        a:hover{
-            color: cadetblue; 
-            font-size: 21px;
-         }
+        .auth-links{
+            ul{
+                margin: 5% 5px;
+                display: flex;
+                list-style: none;
+                li{
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        a{
+            color: white;
+            text-decoration: none;
+        }
+
     }
 }
+
+// header{
+//     background-color:midnightblue;
+//     text-align: left;
+
+//     #heading {
+//         color: whitesmoke;
+//         padding: 20px 40px;
+//         font-size: 40px;
+//         width: 60%;
+//         display: inline-block;
+//     }
+
+//     ul{
+//         display: inline-block;
+//         width: 10%;
+//         margin: 10px 0px;
+//         margin-left: 300px;
+
+//         li{
+//             list-style-type: none;
+
+//             a{
+//                 text-decoration: none;
+//                 color: aliceblue;
+//                 width: 10px;
+//                 font-size: 20px;
+//             }
+//         }
+
+//         a:hover{
+//             color: cadetblue; 
+//             font-size: 21px;
+//          }
+//     }
+// }

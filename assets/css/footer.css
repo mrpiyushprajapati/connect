@@ -1,24 +1,13 @@
-footer {
-  background-color: midnightblue;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  color: whitesmoke; }
-  footer #header {
-    margin: 10px; }
-  footer h2 {
-    margin: 10px 0px;
-    display: inline;
-    font-family: 'Sacramento', cursive; }
-  footer h3 {
-    display: inline;
-    font-size: 25px; }
-  footer ul li {
-    display: inline-block;
-    font-size: 25px;
-    margin-right: 20px;
-    margin-bottom: 10px; }
-    footer ul li a {
-      color: whitesmoke; }
-      footer ul li a a:hover {
-        color: black; }
+#layout-footer {
+  color: white;
+  background: midnightblue;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: flex-start; }
+  #layout-footer a {
+    color: white;
+    text-decoration: none; }
+  #layout-footer .footer-nav ul {
+    list-style: none; }
+    #layout-footer .footer-nav ul li {
+      display: inline-block; }

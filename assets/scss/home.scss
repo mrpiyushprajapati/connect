@@ -1,18 +1,34 @@
-body{
-    background-color: whitesmoke;
-}
-
-#posts-list-container{
+#home-container{
     display: flex;
-    justify-content: center;
-    ul{
+    height: 100%;
+    
+    #feed-posts{
+        width: 70%;
+        padding: 10px;
+    }
 
-        li{
-            list-style-type: disc;
-            text-align: center;
-            width: 300px;
-            font-size: 20px;
-        }
-        
+    #user-friends{
+        width: 30%;
+        padding: 10px;
+        border-left: 1px solid lightgrey;
     }
 }
+
+// body{
+//     background-color: whitesmoke;
+// }
+
+// #posts-list-container{
+//     display: flex;
+//     justify-content: center;
+//     ul{
+
+//         li{
+//             list-style-type: disc;
+//             text-align: center;
+//             width: 300px;
+//             font-size: 20px;
+//         }
+        
+//     }
+// }
