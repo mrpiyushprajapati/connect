@@ -1,4 +1,5 @@
 const Post = require('../models/post');
+const User = require('../models/user');
 
 module.exports.home = function(req, res){
     // return res.end('<h1>express is up for connect</h1>');
@@ -22,9 +23,17 @@ module.exports.home = function(req, res){
         }
     })
     .exec(function(err, posts){
-        return res.render('home', {
-            title: 'lets CONNECT',
-            posts: posts
+        User.find({}, function(err, users){
+            if(err){
+                console.log('error finding in user');
+                return;
+            }
+
+            return res.render('home', {
+                title: 'lets CONNECT',
+                posts: posts,
+                all_users: users
+            });
         });
     });
 }
