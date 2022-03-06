@@ -1,6 +1,6 @@
 const Comment = require('../models/comment');
 const Post = require('../models/post');
-const { post } = require('../routes');
+const User = require('../models/user');
 
 module.exports.create = async function(req, res){
     try {
@@ -13,16 +13,28 @@ module.exports.create = async function(req, res){
                 user: req.user._id
             });
 
-            post.comments.push(comment);
+            post.comments.unshift(comment);
             post.save();
+
+            if (req.xhr){
+                // Similar for comments to fetch the user's id!
+                comment = await comment.populate('user', 'name');
+    
+                return res.status(200).json({
+                    data: {
+                        comment: comment
+                    },
+                    message: "Post created!"
+                });
+            }
 
             req.flash('success', 'Comment added!');
 
-            return res.redirect('/');
+            res.redirect('/');
         }
     } catch (error) {
         req.flash('error', error);
-        return res.redirect('back');
+        return;
     }
 }
 
@@ -36,7 +48,17 @@ module.exports.destroy = async function(req, res){
 
             comment.remove();
 
-            let post = await Post.findByIdAndUpdate(postID, { $pull: {comments: req.params.id}});
+            let post = Post.findByIdAndUpdate(postID, { $pull: {comments: req.params.id}});
+
+            // send the comment id which was deleted back to the views
+            if (req.xhr){
+                return res.status(200).json({
+                    data: {
+                        comment_id: req.params.id
+                    },
+                    message: "Comment deleted!"
+                });
+            }
 
             req.flash('success', 'Comment deleted!');
 
@@ -48,6 +70,6 @@ module.exports.destroy = async function(req, res){
         }
     } catch (error) {
         req.flash('error', error);
-        return res.redirect('back');
+        return;
     }
 }

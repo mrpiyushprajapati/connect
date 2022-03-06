@@ -5,7 +5,7 @@
         <h4>Post</h4>
         <% if(locals.user){ %>
             <form action="/posts/create" id="new-post-form" method="post">
-                <textarea name="content" cols="30" rows="5" placeholder="What's on your mind!" required></textarea>
+                <textarea class="postData" name="content" cols="30" rows="5" placeholder="What's on your mind!" required></textarea>
                 <input type="submit" value="post">
             </form>
         <% } %>
@@ -32,3 +32,6 @@
         <% } %>
     </section>
 </div>
+
+<script src="/js/home_post_comments.js" ></script>
+<script src="/js/home_posts.js"></script>
