@@ -13,7 +13,7 @@ module.exports.index = async function(req, res){
         }
     });
 
-    return res.json(200, {
+    return res.status(200).json({
         message: "Lists of posts",
         posts: posts
     });
@@ -23,22 +23,23 @@ module.exports.destroy = async function(req, res){
     try {
          let post = await Post.findById(req.params.id);
  
-         //.id means converting object id in string
-        //  if(post.user == req.user.id){
+         if(post.user == req.user.id){
              post.remove();
  
              await Comment.deleteMany({post: req.params.id});
   
-             return res.json(200, {
+             return res.status(200).json({
                  message: "Post deleted!"
              });
-        //  }else{
-        //      req.flash('error', 'Unauthorized!');
-        //      return res.redirect('back');
-        //  }
+         }else{
+             return res.status(401).json({
+                 message: "You cannot delete this post!"
+             });
+         }
  
     } catch (error) {
-         return res.json(500, {
+         console.log('***', error);
+         return res.status(500).json({
              message: "Internal error!"
          });
     }
