@@ -26,7 +26,7 @@ module.exports.create = async function(req, res){
                     return;
                 }
 
-                console.log('job enqueued', job.id);
+                // console.log('job enqueued', job.id);
             })
 
             if (req.xhr){
