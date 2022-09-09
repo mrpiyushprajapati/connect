@@ -12,4 +12,23 @@
 <% }else{ %>
     <p><%= profile_user.name %></p>
     <p><%= profile_user.email %></p>
+
+    <br>
+      <p>
+            <% 
+                  let y=false;
+                  for(x of profile_user.friendList){
+                        if(x==user.id){
+                              y=true;
+                        }
+                  }
+            %>
+            <% if(y){ %>
+                  <a href="/friend/delreq/<%= profile_user.id %>" id="friendReqBut">Remove Friend</a>
+            <% }else{ %>
+                  <a href="/friend/newreq/<%= profile_user.id %>" id="friendReqBut">Add Friend</a>
+            <% } %>
+      </p> 
 <% } %>
+
+<script src="/js/friend_request.js"></script>

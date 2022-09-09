@@ -1,22 +1,22 @@
-const moongose = require('mongoose');
+const mongoose = require('mongoose');
 
-const commentSchema = new moongose.Schema({
+const commentSchema = new mongoose.Schema({
     content: {
         type: String,
         required: true
     },
     //comment belongs to a user
     user: {
-        type: moongose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
     post: {
-        type: moongose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Post'
     },
     likes: [
         {
-            type: moongose.Schema.Types.ObjectId,
+            type: mongoose.Schema.Types.ObjectId,
             ref: 'Like'
         }
     ]
@@ -24,6 +24,6 @@ const commentSchema = new moongose.Schema({
     timestamps: true
 });
 
-const Comment = moongose.model('Comment', commentSchema);
+const Comment = mongoose.model('Comment', commentSchema);
 
 module.exports = Comment;

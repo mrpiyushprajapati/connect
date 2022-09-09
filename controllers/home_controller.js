@@ -22,19 +22,32 @@ module.exports.home = async function(req, res){
             path: 'comments',
             populate: {
                 path: 'user'
-            },
-            populate: {
-                path: 'likes'
+                // model: 'User'
             }
-        }).populate('likes').populate('comments');
+            // populate: {
+            //     path: 'likes'
+            // }
+        }).populate('likes');
         
+        console.log(posts);
+
         let users = await User.find({});
         
-        return res.render('home', {
-            title: 'lets CONNECT',
-            posts: posts,
-            all_users: users
-        });
+        if(req.isAuthenticated()){
+            let friends = await User.findById(req.user.id).populate('friendList', 'name');
+            return res.render('home', {
+                title: 'lets CONNECT',
+                posts : posts,
+                all_users : users,
+                friends : friends.friendList
+            });
+        }else{
+            return res.render('home', {
+                title: 'lets CONNECT',
+                posts : posts,
+                all_users : users
+            });
+        }
 
     } catch(error) {
         console.log('Error', error);

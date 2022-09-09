@@ -20,9 +20,22 @@
             </ul>
         </div>
     </section>
+
+    <% if(locals.user){ %>
+        <section id="user-friends">
+                <h2>Friends</h2>
+                <% for(u of friends){ %>
+                        <p>
+                                <a href="/users/profile/<%= u.id %>">
+                                        <%= u.name %>
+                                </a>
+                        </p>
+                <% } %>
+        </section>
+    <% } %>
     
     <section id="user-friends">
-        <h4>Friends</h4>
+        <h4>All Users</h4>
         <% for(u of all_users){ %>
         
             <p>
